@@ -1,19 +1,19 @@
-// Get the Handlebars template source from the script tag with id 'ifHelper'
+// Retrieve the Handlebars template source from the script tag with id 'ifHelper'
 const source = document.getElementById('ifHelper').innerHTML;
 
-// Compile the Handlebars template
+// Compile the Handlebars template source into a reusable function
 const template = Handlebars.compile(source);
 
-// Define the context object to pass data to the template
+// Define the context object to provide data for the template rendering
 const context = {
-  opinion: true
-}
+  opinion: false // Set to true or false to control which message is shown
+};
 
-// Generate the HTML by applying the context to the template
+// Generate the HTML by applying the context data to the compiled template
 const compiledHtml = template(context);
 
-// Get the element where the compiled HTML will be inserted
+// Select the DOM element where the rendered HTML will be inserted
 const debateElement = document.getElementById('debate');
 
-// Insert the compiled HTML into the page
+// Insert the generated HTML into the selected element on the page
 debateElement.innerHTML = compiledHtml;

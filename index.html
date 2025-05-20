@@ -3,26 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>GIF!</title>
-    <!-- Load Handlebars library -->
+    <!-- Load the Handlebars library for template rendering -->
     <script src="handlebars.min.js"></script>
-    <!-- Link to external stylesheet -->
+    <!-- Link to the external stylesheet for page styling -->
     <link rel="stylesheet" type="text/css" href="public/style.css">
-    <!-- Handlebars template using the {{#if}} helper to conditionally render content -->
+    <!-- Handlebars template using the {{#if}} helper to conditionally render content based on 'opinion' -->
     <script id="ifHelper" type="text/x-handlebars-template">
     {{#if opinion}}
       <p>"The correct way to say 'GIF' is GIF!"</p>
+      {{else}}
+         <p>"There's no right way to say GIF!"</p>
     {{/if}}
     </script>    
   </head>
   <body>
-    <!-- Background image container -->
+    <!-- Container for the background image -->
     <div class="bg">
       <img class="bg-convo" src="https://content.codecademy.com/courses/learn-handlebars/handlebars%20if.svg">
     </div>
-    <!-- Container for the debate content rendered by Handlebars -->
+    <!-- Container where the Handlebars-rendered debate message will appear -->
     <div id="debate">
     </div>
   </body>
-  <!-- Load main JavaScript file that handles Handlebars rendering -->
+  <!-- Load the main JavaScript file that handles Handlebars rendering and DOM updates -->
   <script src="public/main.js" type="text/javascript"></script>
 </html>
